@@ -7,13 +7,15 @@ class Vector:
         self.y = y
 
     def __repr__(self):
-        return 'Vector(%r, %r)' % (self.x, self.y)
+        return 'Vector({!r}, {!r})'.format(self.x, self.y)
 
     def __abs__(self):
         return hypot(self.x, self.y)
 
     def __bool__(self):
-        return bool(abs(self))
+        #return bool(abs(self))
+        #更高效的实现
+        return bool(self.x or self.y)
 
     def __add__(self, other):
         x = self.x + other.x

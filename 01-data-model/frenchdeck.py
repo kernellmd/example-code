@@ -16,6 +16,7 @@ class FrenchDeck:
         self._cards = [Card(rank, suit) for suit in self.suits
                                         for rank in self.ranks]
 
+    #__len__ 和__getitem__ 方法使FrenchDeck类似于Python自有的数据序列
     def __len__(self):
         return len(self._cards)
 
