@@ -12,6 +12,7 @@ WORD_RE = re.compile('\w+')
 
 index = {}
 with open(sys.argv[1], encoding='utf-8') as fp:
+    #enumerate 第二个参数表示从第几个位置开始迭代
     for line_no, line in enumerate(fp, 1):
         for match in WORD_RE.finditer(line):
             word = match.group()
